@@ -1,0 +1,97 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require_self
+ */
+
+$fg-column: 60px;             // Column Width
+$fg-gutter: 25px;             // Gutter Width
+$fg-max-columns: 12;          // Total Columns For Main Containe
+$main-font: Arial Rounded, sans-serif;
+$gw-gutter: 200px;
+
+body {
+  width: grid-width(4);
+  margin-left: $gw-gutter;
+  margin-top: 50px;
+  margin-left: 50px;
+  color: white;
+  font-family: "Arial Rounded MT", Arial, Helvetica, sans-serif;
+  font-size: 36px;
+  background: #05B8CC;
+  width: flex-grid(12);
+}
+
+td {
+  font-family: "Arial Rounded MT", Arial, Helvetica, sans-serif;
+  width: flex-grid(6);
+  height: 250px;
+  font-size: 48px;
+  margin: 0px;
+}
+
+.form-label {
+  font-family: "Arial Rounded MT", Arial, Helvetica, sans-serif;
+}
+
+.form-checkbox {
+  margin-right: -300px;
+}
+
+.submit-button {
+  font-family: "Arial Rounded MT", Arial, Helvetica, sans-serif;
+  background-color: #9D1309;
+  padding: 10px;
+  border-radius: 8px;
+  height: 55px;
+  width: 360px;
+  font-size: 24px;
+  color: white;
+}
+
+input {
+  font-family: "Arial Rounded MT", Arial, Helvetica, sans-serif;
+  padding: 10px;
+  border-radius: 8px;
+  height: 35px;
+  width: 340px;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.punch-card {
+  font-family: "Arial Rounded MT", Arial, Helvetica, sans-serif;
+  text-align: center;
+}
+
+.header-bar {
+  font-family: "Arial Rounded MT", Arial, Helvetica, sans-serif;
+  width: flex-grid(12);
+  margin: 30px;
+  padding: 30px;
+  height: 25px;
+  font-size: 24px;
+  text-align: right;
+  color: white;
+}
+
+.submit{
+  margin-left: 20px;
+  font-size: 24px;
+  border: 110px solid #ffcece; 
+  background-color: #ea8f8f; 
+  border-radius: 300px; 
+  padding: 10px; 
+  height: 425px; 
+  width: 425px; 
+  text-align: center;
+  color: white;
+}
+
