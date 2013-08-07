@@ -7,6 +7,9 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+<% if current_user %>
+  <div class='header-bar'>Welcome! <%= current_user.email %> <%= link_to 'log out', destroy_user_session_path, :method => :delete, :class => 'submit-button' %></div>
+<% end %>
 
 <! DEVISE FLASH MESSAGES... CLEAN UP LATER >
 <p class="notice"><%= notice %></p>

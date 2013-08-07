@@ -1,29 +1,28 @@
-Welcome! <%= current_user.email %> <%= link_to 'sign_out', destroy_user_session_path, :method => :delete %>
 
 <div class="boobs">
   <table>
     <tr>
       <td>
         <%= form_for @new_punch do |f| %>
-        	<%= f.hidden_field :boob, :value => 'left' %>
+          <%= f.hidden_field :boob, :value => 'left' %>
           <%= f.submit "PUNCH LEFT", :class => "submit" %>
         <% end %>
       <td>
         <%= form_for @new_punch do |f| %>
-        	<%= f.hidden_field :boob, :value => 'right' %>
+          <%= f.hidden_field :boob, :value => 'right' %>
           <%= f.submit "PUNCH RIGHT", :class => "submit" %>
         <% end %>
       </td>
     </tr>
-   	<tr>
+    <tr>
       <td class="punch-card" id="left">
-      	<% if @left_punch %>
-	        <%= @left_punch.milkpunch.strftime('%b %e, %l:%M %p') %>
+        <% if @left_punch %>
+          <%= @left_punch.milkpunch.strftime('%b %e, %l:%M %p') %>
         <% end %>
       </td>
       <td class="punch-card" id="right">
-      	<% if @right_punch %>
-	        <%= @right_punch.milkpunch.strftime('%b %e, %l:%M %p') %>
+        <% if @right_punch %>
+          <%= @right_punch.milkpunch.strftime('%b %e, %l:%M %p') %>
         <% end %>
       </td>
     </tr>
@@ -44,3 +43,22 @@ Welcome! <%= current_user.email %> <%= link_to 'sign_out', destroy_user_session_
     </tr>
 	</table>
 </div>
+
+<script>
+function setBackground() {
+  var left = new Date(document.getElementById("left").innerHTML);
+  var right = new Date(document.getElementById("right").innerHTML);
+  var bottle = new Date(document.getElementById("bottle").innerHTML);
+  var times = [left, right, bottle];
+  var maxDate = new Date(Math.max.apply(null,times));
+  if (String(maxDate) == String(left))
+    {document.body.style.background="#9F90D0";}
+  else if (String(maxDate) == String(right))
+    {document.body.style.background="#9D1309";}
+  else
+    {document.body.style.background="#05B8CC";}
+  };
+  window.onload = function() {
+    setBackground();
+  };
+</script>
