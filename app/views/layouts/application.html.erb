@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>MilkpunchRails</title>
+  <title>MILKPUNCH</title>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
 <% if current_user %>
-  <div class='header-bar'>Welcome! <%= current_user.email %> <%= link_to 'log out', destroy_user_session_path, :method => :delete, :class => 'submit-button' %></div>
+  <div class='header-bar'><%= current_user.email %> <%= link_to 'log out', destroy_user_session_path, :method => :delete, :class => 'submit-button' %></div>
 <% end %>
 
 <! DEVISE FLASH MESSAGES... CLEAN UP LATER >
