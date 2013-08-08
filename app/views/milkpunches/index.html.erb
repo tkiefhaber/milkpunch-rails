@@ -16,12 +16,12 @@
     <tr>
       <td class="punch-card" id="left">
         <% if @left_punch %>
-          <%= I18n.l(@left_punch.milkpunch).to_time.strftime('%b %e, %l:%M %p') %>
+          <%= @left_punch.milkpunch.strftime('%b %e, %l:%M %p') %>
         <% end %>
       </td>
       <td class="punch-card" id="right">
         <% if @right_punch %>
-          <%= I18n.l(@right_punch.milkpunch).to_time.strftime('%b %e, %l:%M %p') %>
+          <%= @right_punch.milkpunch.strftime('%b %e, %l:%M %p') %>
         <% end %>
       </td>
     </tr>
@@ -36,7 +36,7 @@
     <tr>
       <td class="punch-card" id="bottle">
       <% if @bottle_punch %>
-          <%= I18n.l(@bottle_punch.milkpunch).to_time.strftime('%b %e, %l:%M %p') %>
+          <%= @bottle_punch.milkpunch.strftime('%b %e, %l:%M %p') %>
         <% end %>
       </td>
     </tr>
