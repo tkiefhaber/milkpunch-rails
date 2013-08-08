@@ -11,11 +11,13 @@
  *= require_self
  */
 
+
 $fg-column: 60px;             // Column Width
 $fg-gutter: 25px;             // Gutter Width
 $fg-max-columns: 12;          // Total Columns For Main Containe
 $main-font: Arial Rounded, sans-serif;
-$gw-gutter: 200px;
+$gw-column: 100px;
+$gw-gutter: 100px;
 
 body {
   width: grid-width(4);
@@ -29,12 +31,27 @@ body {
   width: flex-grid(12);
 }
 
+table {
+  width: flex-grid(12);
+}
+
 td {
   font-family: "Arial Rounded MT", Arial, Helvetica, sans-serif;
   width: flex-grid(6);
   height: 250px;
   font-size: 48px;
   margin: 0px;
+}
+
+.header-bar {
+  font-family: "Arial Rounded MT", Arial, Helvetica, sans-serif;
+  width: flex-grid(12);
+  margin: 30px;
+  padding: 30px;
+  height: 25px;
+  font-size: 24px;
+  text-align: right;
+  color: white;
 }
 
 .form-label {
@@ -83,8 +100,8 @@ input {
 }
 
 .submit{
-  margin-left: 20px;
-  font-size: 24px;
+  margin-left: 5px;
+  font-size: 22px;
   border: 110px solid #ffcece; 
   background-color: #ea8f8f; 
   border-radius: 300px; 
@@ -95,3 +112,15 @@ input {
   color: white;
 }
 
+.bottle{
+  margin-left: 5px;
+  font-size: 22px;
+  border: 110px solid #ffcece; 
+  background-color: #30D173; 
+  border-radius: 300px; 
+  padding: 10px; 
+  height: 425px; 
+  width: 425px; 
+  text-align: center;
+  color: white;
+}
