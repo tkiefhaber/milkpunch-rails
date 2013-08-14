@@ -1,4 +1,5 @@
 <div class="boobs">
+  <div id='two-play'></div>
   <table>
     <tr>
       <td>
@@ -60,4 +61,84 @@ function setBackground() {
   window.onload = function() {
     setBackground();
   };
+
+var elem = document.getElementById('two-play');
+var params = { width: 985, height: 175 };
+var two = new Two(params).appendTo(elem);
+
+// two has convenience methods to create shapes.
+var triangle = two.makePolygon(40, 150, 150, 150, 95, 50, true, false);
+var new_triangle = two.makePolygon(80, 150, 190, 150, 135, 50, true, false);
+var i = two.makeRectangle(220, 100, 40, 100)
+var vert_l = two.makeRectangle(270, 100, 40, 100)
+var hor_l = two.makeRectangle(290, 130, 80, 40)
+var vert_k = two.makeRectangle(360, 100, 40, 100)
+var triangle_k = two.makePolygon(340, 100, 415, 150, 415, 50, true, false);
+var vert_p = two.makeRectangle(445, 100, 40, 100)
+var ellipse_p = two.makeEllipse(478, 79, 50, 30);
+var square_u = two.makeRectangle(590, 85, 100, 70);
+var ellipse_u = two.makeEllipse(590, 125, 50, 30);
+var group = two.makeGroup(triangle, new_triangle, i, vert_l, hor_l, vert_k, triangle_k, vert_p, ellipse_p, square_u, ellipse_u)
+
+group.scale = 0.35;
+two.bind('update', function(frameCount) {
+  var t = (1 - group.scale) * 0.125;
+  group.scale += t;
+}).play();
+
+var $fill = 'black'
+var $stroke = 'black'
+var $linewidth = 5
+var $opacity = 0.5
+
+
+// The object returned has many stylable properties:
+triangle.fill = $fill; // Accepts all valid css color
+triangle.stroke = $stroke; // Accepts all valid css color
+triangle.linewidth = $linewidth;
+triangle.opacity = $opacity;
+triangle_k.fill = $fill; // Accepts all valid css color
+triangle_k.stroke = $stroke; // Accepts all valid css color
+triangle_k.linewidth = $linewidth;
+triangle_k.opacity = $opacity;
+new_triangle.fill = $fill; // Accepts all valid css color
+new_triangle.stroke = $stroke; // Accepts all valid css color
+new_triangle.linewidth = $linewidth;
+new_triangle.opacity = $opacity;
+i.fill = $fill; // Accepts all valid css color
+i.stroke = $stroke; // Accepts all valid css color
+i.linewidth = $linewidth;
+i.opacity = $opacity;
+vert_l.fill = $fill; // Accepts all valid css color
+vert_l.stroke = $stroke; // Accepts all valid css color
+vert_l.linewidth = $linewidth;
+vert_l.opacity = $opacity;
+hor_l.fill = $fill; // Accepts all valid css color
+hor_l.stroke = $stroke; // Accepts all valid css color
+hor_l.linewidth = $linewidth;
+hor_l.opacity = $opacity;
+vert_k.fill = $fill; // Accepts all valid css color
+vert_k.stroke = $stroke; // Accepts all valid css color
+vert_k.linewidth = $linewidth;
+vert_k.opacity = $opacity;
+vert_p.fill = $fill; // Accepts all valid css color
+vert_p.stroke = $stroke; // Accepts all valid css color
+vert_p.linewidth = $linewidth;
+vert_p.opacity = $opacity;
+ellipse_p.fill = $fill; // Accepts all valid css color
+ellipse_p.stroke = $stroke; // Accepts all valid css color
+ellipse_p.linewidth = $linewidth;
+ellipse_p.opacity = $opacity;
+square_u.fill = $fill; // Accepts all valid css color
+square_u.stroke = $stroke; // Accepts all valid css color
+square_u.linewidth = $linewidth;
+square_u.opacity = $opacity;
+ellipse_u.fill = $fill; // Accepts all valid css color
+ellipse_u.stroke = $stroke; // Accepts all valid css color
+ellipse_u.linewidth = $linewidth;
+ellipse_u.opacity = $opacity;
+
+// Don't forget to tell two to render everything
+// to the screen
+two.update();
 </script>
