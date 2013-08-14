@@ -32,11 +32,22 @@
           <%= f.submit "BOTTLE PUNCH", :class => "bottle" %>
         <% end %>
       </td>
+      <td>
+        <%= form_for @new_punch do |f| %>
+          <%= f.hidden_field :boob, :value => 'meds' %>
+          <%= f.submit "MEDS PUNCH", :class => "bottle" %>
+        <% end %>
+      </td>
     </tr>
     <tr>
       <td class="punch-card" id="bottle">
       <% if @bottle_punch %>
           <%= @bottle_punch.milkpunch.strftime('%b %e, %l:%M %p') %>
+        <% end %>
+      </td>
+      <td class="punch-card" id="meds">
+      <% if @meds_punch %>
+          <%= @meds_punch.milkpunch.strftime('%b %e, %l:%M %p') %>
         <% end %>
       </td>
     </tr>
@@ -48,14 +59,17 @@ function setBackground() {
   var left = new Date(document.getElementById("left").innerHTML);
   var right = new Date(document.getElementById("right").innerHTML);
   var bottle = new Date(document.getElementById("bottle").innerHTML);
-  var times = [left, right, bottle];
+  var meds = new Date(document.getElementById("meds").innerHTML);
+  var times = [left, right, bottle, meds];
   var maxDate = new Date(Math.max.apply(null,times));
   if (String(maxDate) == String(left))
     {document.body.style.background="#9F90D0";}
   else if (String(maxDate) == String(right))
     {document.body.style.background="#9D1309";}
-  else
+  else if (String(maxDate) == String(bottle))
     {document.body.style.background="#05B8CC";}
+  else
+    {document.body.style.background="#ff00ff";}
   };
   window.onload = function() {
     setBackground();

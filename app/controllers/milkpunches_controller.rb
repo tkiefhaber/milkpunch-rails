@@ -6,6 +6,7 @@ class MilkpunchesController < ApplicationController
     @left_punch = current_user.milkpunches.where(:boob => 'left').last
     @right_punch = current_user.milkpunches.where(:boob => 'right').last
     @bottle_punch = current_user.milkpunches.where(:boob => 'bottle').last
+    @meds_punch = current_user.milkpunches.where(:boob => 'meds').last
   end
 
   def create
