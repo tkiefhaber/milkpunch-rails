@@ -6,20 +6,14 @@
           <%= f.hidden_field :boob, :value => 'left' %>
           <%= f.submit "PUNCH LEFT", :class => "submit" %>
         <% end %>
+        <% if @left_punch %>
+          <%= @left_punch.milkpunch.strftime('%b %e, %l:%M %p') %>
+        <% end %>
       <td>
         <%= form_for @new_punch do |f| %>
           <%= f.hidden_field :boob, :value => 'right' %>
           <%= f.submit "PUNCH RIGHT", :class => "submit" %>
         <% end %>
-      </td>
-    </tr>
-    <tr>
-      <td class="punch-card" id="left">
-        <% if @left_punch %>
-          <%= @left_punch.milkpunch.strftime('%b %e, %l:%M %p') %>
-        <% end %>
-      </td>
-      <td class="punch-card" id="right">
         <% if @right_punch %>
           <%= @right_punch.milkpunch.strftime('%b %e, %l:%M %p') %>
         <% end %>
@@ -31,25 +25,20 @@
           <%= f.hidden_field :boob, :value => 'bottle' %>
           <%= f.submit "BOTTLE PUNCH", :class => "bottle" %>
         <% end %>
+        <% if @bottle_punch %>
+            <%= @bottle_punch.milkpunch.strftime('%b %e, %l:%M %p') %>
+          <% end %>
       </td>
       <td>
         <%= form_for @new_punch do |f| %>
           <%= f.hidden_field :boob, :value => 'meds' %>
           <%= f.submit "MEDS PUNCH", :class => "bottle" %>
         <% end %>
-      </td>
-    </tr>
-    <tr>
-      <td class="punch-card" id="bottle">
-      <% if @bottle_punch %>
-          <%= @bottle_punch.milkpunch.strftime('%b %e, %l:%M %p') %>
-        <% end %>
-      </td>
-      <td class="punch-card" id="meds">
-      <% if @meds_punch %>
+        <% if @meds_punch %>
           <%= @meds_punch.milkpunch.strftime('%b %e, %l:%M %p') %>
         <% end %>
       </td>
+    </tr>
     </tr>
   </table>
 </div>
