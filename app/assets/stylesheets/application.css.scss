@@ -1,29 +1,15 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
- * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the top of the
- * compiled file, but it's generally better to create a new file per style scope.
- *
- *= require_self
- */
-
-
-$fg-column: 60px;             // Column Width
-$fg-gutter: 25px;             // Gutter Width
-$fg-max-columns: 12;          // Total Columns For Main Containe
+$fg-column: 60px;
+$fg-gutter: 25px;
+$fg-max-columns: 12;
 $main-font: Arial Rounded, sans-serif;
 $gw-column: 100px;
-$gw-gutter: 100px;
+$gw-gutter: 50px;
 
 body {
   width: 100%;
   margin-left: $gw-gutter;
+  margin-right: $gw-gutter;
   margin-top: 50px;
-  margin-left: 50px;
   color: white;
   font-family: "Arial Rounded MT", Arial, Helvetica, sans-serif;
   font-size: 36px;
@@ -44,7 +30,7 @@ td {
 
 .header-bar {
   font-family: "Arial Rounded MT", Arial, Helvetica, sans-serif;
-  width: 80%;
+  width: 85%;
   margin: 30px;
   padding: 30px;
   height: 25px;
@@ -85,6 +71,7 @@ td {
   width: 425px; 
   text-align: center;
   color: white;
+  margin-bottom: 30px;
 }
 
 .bottle{
@@ -98,4 +85,5 @@ td {
   width: 425px; 
   text-align: center;
   color: white;
+  margin-bottom: 30px;
 }
