@@ -13,6 +13,9 @@
     <div class='form-label'><%= f.label :password_confirmation %></div>
     <div class='form-input'><%= f.password_field :password_confirmation %></div>
 
+    <div class='form-label'><%= f.label :timezone %></div>
+    <div class='form-input'><%= time_zone_select( "user", "time_zone", ActiveSupport::TimeZone.us_zones, default: "Pacific Time (US & Canada)" ) %></div>
+
     <div><%= f.submit "Sign up", :class => 'submit-button' %></div>
   <% end %>
 
