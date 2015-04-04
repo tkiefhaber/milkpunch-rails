@@ -8,7 +8,13 @@
 </head>
 <body>
 <% if current_user %>
-  <div class='header-bar'><%= link_to 'HOME', milkpunches_path, :class => 'articles-button' %><%= link_to 'BORED?', articles_path, :class => 'articles-button' %> <%= current_user.email %> <%= link_to 'log out', destroy_user_session_path, :method => :delete, :class => 'submit-button' %></div>
+  <div class='header-bar'>
+    <%= current_user.email %>
+    <%= link_to 'HOME', milkpunches_path, :class => 'articles-button' %>
+    <%= link_to 'STATS', stats_path, :class => 'articles-button' %>
+    <%= link_to 'BORED?', articles_path, :class => 'articles-button' %>
+    <%= link_to 'LOG OUT', destroy_user_session_path, :method => :delete, :class => 'articles-button' %>
+  </div>
 <% end %>
 
 <! DEVISE FLASH MESSAGES... CLEAN UP LATER >

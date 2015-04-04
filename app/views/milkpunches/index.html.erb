@@ -23,31 +23,35 @@
         </div>
       </td>
     </tr>
-    <tr>
-      <td>
-        <%= form_for @new_punch do |f| %>
-          <%= f.hidden_field :boob, :value => 'bottle' %>
-          <%= f.submit "BOTTLE PUNCH", :class => "bottle" %>
-        <% end %>
-        <div id='bottle'>
-          <% if @bottle_punch %>
-            <%= @bottle_punch.milkpunch.strftime('%b %e, %l:%M %p') %>
+  </table>
+  <table>
+    <div id="bottles-meds">
+      <tr id="bottle-punches">
+        <td>
+          <%= form_for @new_punch do |f| %>
+            <%= f.hidden_field :boob, :value => 'bottle' %>
+            <%= f.submit "BOTTLE", :class => "bottle" %>
           <% end %>
-        </div>
-      </td>
-      <td>
-        <%= form_for @new_punch do |f| %>
-          <%= f.hidden_field :boob, :value => 'meds' %>
-          <%= f.submit "MEDS PUNCH", :class => "bottle" %>
-        <% end %>
-        <div id='meds'>
-          <% if @meds_punch %>
-            <%= @meds_punch.milkpunch.strftime('%b %e, %l:%M %p') %>
+          <div id='bottle'>
+            <% if @bottle_punch %>
+              <%= @bottle_punch.milkpunch.strftime('%b %e, %l:%M %p') %>
+            <% end %>
+          </div>
+        </td>
+        <td>
+          <%= form_for @new_punch do |f| %>
+            <%= f.hidden_field :boob, :value => 'meds' %>
+            <%= f.submit "MEDS", :class => "bottle" %>
           <% end %>
-        </div>
-      </td>
+          <div id='meds'>
+            <% if @meds_punch %>
+              <%= @meds_punch.milkpunch.strftime('%b %e, %l:%M %p') %>
+            <% end %>
+          </div>
+        </td>
+      </tr>
     </tr>
-    </tr>
+    </div>
   </table>
 </div>
 
