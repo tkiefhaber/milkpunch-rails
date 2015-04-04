@@ -3,10 +3,10 @@ class MilkpunchesController < ApplicationController
 
   def index
     @new_punch = Milkpunch.new
-    @left_punch = current_user.milkpunches.where(:boob => 'left').last
-    @right_punch = current_user.milkpunches.where(:boob => 'right').last
-    @bottle_punch = current_user.milkpunches.where(:boob => 'bottle').last
-    @meds_punch = current_user.milkpunches.where(:boob => 'meds').last
+    @left_punch = current_user.last_left
+    @right_punch = current_user.last_right
+    @bottle_punch = current_user.last_bottle
+    @meds_punch = current_user.last_meds
   end
 
   def create
